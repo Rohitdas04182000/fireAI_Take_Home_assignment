@@ -1,7 +1,19 @@
+# Dependencies for both projects in this repository.
+# Project A needs only pytest; everything else is Project B's.
+
+# ---- Project B (NYC 311 data quality) ----
 pandas==3.0.1
 numpy==1.26.4
 pyarrow==24.0.0
 scikit-learn==1.4.2
 scipy==1.17.0
 requests==2.33.1
+
+# ---- Shared ----
 pytest==8.3.5
+
+# ---- Project A, optional ----
+# The demo UI (ui/app.py) additionally needs Streamlit (1.45.1 was used). It is not
+# pinned here because nothing else in either project imports it and it is not needed
+# to run the tests or reproduce.py:
+#   python3 -m pip install streamlit

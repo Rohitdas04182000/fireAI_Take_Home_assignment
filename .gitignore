@@ -39,3 +39,11 @@ Thumbs.db
 
 # ---- Personal working notes (not part of the submission) ----
 /SUBMISSION_CHECKLIST.md
+
+# ============================ Project A (income-tax engine) ============================
+# reproduce.py output (regenerated on every run)
+/reproduce_out/
+# The assignment brief (third-party document, not part of the submission)
+/Rules vs LLMs Take-Home Assignment for AI Eng.pdf
+# NOTE: /llm_cache/ is deliberately NOT ignored: it holds the recorded LLM calls that
+# reproduce.py replays. Project B's own cache (project_b/llm_cache/) is likewise tracked.

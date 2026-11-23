@@ -1,4 +1,34 @@
-# Rules vs LLMs - Project B: data-quality checks on NYC 311
+# Fire AI take-home
+
+This repository holds both projects. They are independent: separate packages, separate test
+suites, separate write-ups.
+
+| Project | What it is | Start here |
+| --- | --- | --- |
+| **A** - income-tax engine | A hand-coded rule engine, an LLM-at-query-time engine and an LLM-compiled engine, compared on FY 2024-25 and FY 2025-26 | [README_PROJECT_A.md](README_PROJECT_A.md) |
+| **B** - NYC 311 data quality | Declarative rules, statistical detectors and LLM review across 12 kinds of data problem | this file, from "Project B" below |
+
+Both projects ship documents of the same name, so Project A's carry a `_PROJECT_A` suffix and
+Project B's keep the plain names:
+
+| | Project A | Project B |
+| --- | --- | --- |
+| Overview | [README_PROJECT_A.md](README_PROJECT_A.md) | this README |
+| Results | [RESULTS_A.md](RESULTS_A.md) | [RESULTS_B.md](RESULTS_B.md) |
+| Decisions | [DECISION_MATRIX_PROJECT_A.md](DECISION_MATRIX_PROJECT_A.md) | [DECISION_MATRIX.md](DECISION_MATRIX.md) |
+| AI usage | [AI_USAGE_PROJECT_A.md](AI_USAGE_PROJECT_A.md) | [AI_USAGE.md](AI_USAGE.md) |
+
+`requirements.txt` covers both; Project A needs only `pytest` from it. Run each suite with its
+own path, since a bare `pytest` picks up Project A only (`pytest.ini` sets `testpaths`):
+
+```
+python -m pytest project_a -q     # Project A
+python -m pytest tests -q         # Project B
+```
+
+---
+
+# Project B: data-quality checks on NYC 311
 
 For each of 12 kinds of data problem, this project builds a declarative rule, a statistical
 detector and an LLM review. It measures detection, false alarms, cost, throughput and explanation
